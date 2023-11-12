@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 import axios from 'axios';
+import { API_KEY } from '@env';
 
 interface WeatherData {
   name: string;
@@ -16,8 +17,6 @@ interface WeatherData {
 const WeatherScreen: React.FC = () => {
   const [city, setCity] = useState<string>('');
   const [weather, setWeather] = useState<WeatherData | null>(null);
-
-  const API_KEY = 'b8e09afa3f3b4ec5a84bde93a35ede1b'; // Remplacez 'VOTRE_CLÉ_API_OPENWEATHERMAP' par votre propre clé API
 
   const fetchWeather = async () => {
 
